@@ -7,12 +7,12 @@ export default function Headers() {
   const [joke, setJoke] = useState("random dad joke");
   const fetchDadJoke = async () => {
     try {
-      const res = await axios(url, {
+      const { data } = await axios(url, {
         headers: {
           Accept: "application/json",
         },
       });
-      console.log(res);
+      console.log(data);
     } catch (error) {}
   };
   return (
