@@ -12,15 +12,17 @@ export default function Headers() {
           Accept: "application/json",
         },
       });
-      console.log(data);
-    } catch (error) {}
+      setJoke(data.joke);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
   return (
     <section className="section text-center">
       <button className="btn" onClick={fetchDadJoke}>
         Random Joke
       </button>
-      <p className="dad-joke"></p>
+      <p className="dad-joke">{joke}</p>
     </section>
   );
 }
